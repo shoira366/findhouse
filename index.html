@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/e7b8e12aee.js" crossorigin="anonymous"></script>
+  <title>Find house</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css">
+  <!-- <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+  <link rel="manifest" href="/icons/site.webmanifest">
+  <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"> -->
+</head>
+
+<body>
+  <!-- <div class="modal">
+        <div class="modal-wrapper">
+            <button class="btn">x</button>
+            <h3 class="h_3">Modal</h3>
+        </div>
+    </div> -->
+
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <img class="header__logo" src="./images/logo.png" width="150" height="120" alt="logo">
+        <input type="checkbox" id="toggle" class="toggle--checkbox">
+        <label for="toggle" class="toggle--label">
+          <span class="toggle--label-background"></span>
+        </label>
+        <ul class="header__list">
+          <li class="header__item"><a class="header__link" href="./index.html">Home</a></li>
+          <li class="header__item"><a class="header__link" href="./about.html">About Page</a></li>
+          <li class="header__item"><a class="header__link" href="./contact.html">About Us</a></li>
+        </ul>
+        <button class="icon-btn">
+          <img src="./images/heart.svg" width="90" height="90" alt="">
+        </button>
+        <button class="farbutton">
+          <i style="color:#082032" class="fas fa-th-large fa-2x"></i>
+        </button>
+        <button class="fadbutton">
+          <i style="color:#082032" class="fas fa-th-list fa-2x"></i>
+        </button>
+        <!-- <input id="checkbox" id="y" type="checkbox">
+                    <label for="y">
+                        <i class="far fa-table fa-3x"></i>
+                    </label> -->
+    </div>
+    <div class="box-modal">
+    </div>
+    <div class="modal-mini">
+
+      <button class="vector-btn">
+        <img src="./images/arrow-ios-left.svg" alt="">
+      </button>
+
+      <div class="liked_feild">
+        
+      </div>
+
+    </div>
+    </nav>
+  </header>
+
+  <form class="form" id="form">
+    <input type="text" id="search" placeholder="search here...">
+
+    <select id="address">
+      <option value="All">All</option>
+    </select>
+
+    <select id="price">
+      <option disabled selected value="false">Sort by</option>
+      <option value="Cheap-Expensive">Cheap-Expensive</option>
+      <option value="Expensive-Cheap">Expensive-Cheap</option>
+      <option value="new-old">new-old</option>
+      <option value="old-new">old-new</option>
+    </select>
+
+
+
+    <select id="special">
+      <option value="All">All</option>
+    </select>
+
+
+    <button class="button" type="submit">Search</button>
+  </form>
+
+
+
+  <div class="wrapper" id="wrapper">
+
+
+
+    <!-- <div class="card" id="card">
+          <img src="https://picsum.photos/200" alt="">
+          <span class="title">Toshkent city</span>
+          <i class="fa fa-heart fav_icon" aria-hidden="true"></i>
+          <p class="address">Toshkent</p>
+          <p class="price">32 000 yeuro</p>
+    
+          <button class = "more" id="more">Show more</button>
+        </div> -->
+
+
+
+  </div>
+
+  <div class="big_modal ">
+    <button class="close_big_modal"><i class="fas fa-times fa-2x"></i></button>
+    <div class="little_modal">
+
+      <!-- <img class="modal_img" src="https://picsum.photos/200" alt="img">
+          <h2 class="modal_title">Toshkent city</h2>
+          <p class="modal_address">Address: Toshkent</p>
+          <ul class="modal_list">
+            <strong>House for :</strong> 
+            <li class="modal_item">family</li>
+            <li class="modal_item">tourist</li>
+            <li class="modal_item">for everyone</li>
+          </ul>
+          <h4 class="modal_type">Type of the house: yard</h4>
+          <h4 class="modal_date">House was built in: 2015</h4>
+          <h3 class="modal_price">490581 euro</h3> -->
+    </div>
+  </div>
+
+
+  <div id="big-box">
+  </div>
+
+  <script src="./js/HOUSE.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+
+</html>

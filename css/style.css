@@ -1,0 +1,686 @@
+@font-face {
+  font-family: 'Orbitron';
+  src: url('../fonts/Orbitron-Regular.woff2') format('woff2'),
+  url('../fonts/Orbitron-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial";
+  background-color: #FDFCE5;
+}
+
+.header {
+  background-color: #fff;
+  padding-bottom: 10px;
+}
+
+.container {
+  width: 1250px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.toggle--checkbox {
+  display: none;
+}
+.toggle--checkbox:checked+.toggle--label {
+  background: var(--indigo-color);
+  border-color: var(--indigo-border);
+  /** Change the cloud to stars **/
+  /** Change the sun into the moon **/
+  /** Show the dimples on the moon **/
+}
+
+.toggle--checkbox:checked+.toggle--label .toggle--label-background {
+  left: 60px;
+  width: 5px;
+}
+
+.toggle--checkbox:checked+.toggle--label .toggle--label-background:before {
+  width: 5px;
+  height: 5px;
+  top: -25px;
+}
+
+.toggle--checkbox:checked+.toggle--label .toggle--label-background:after {
+  width: 5px;
+  height: 5px;
+  left: -30px;
+  top: 20px;
+}
+
+.toggle--checkbox:checked+.toggle--label:before {
+  background: var(--white);
+  border-color: var(--gray-border);
+  animation-name: switch;
+  animation-duration: 350ms;
+  animation-fill-mode: forwards;
+}
+
+.toggle--checkbox:checked+.toggle--label:after {
+  transition-delay: 150ms;
+  opacity: 1;
+}
+
+.toggle--label {
+  /** Placeholder element, starting at blue **/
+  width: 120px;
+  height: 60px;
+  background: var(--blue-color);
+  border-radius: 100px;
+  border: 5px solid var(--blue-border);
+  display: flex;
+  position: relative;
+  transition: all 350ms ease-in;
+  margin-left: 480px;
+  margin-top: 18px;
+  /** The sun cloud and moon stars **/
+  /** Sun/Moon element **/
+  /** Gray dots on the moon **/
+}
+.toggle--label:before {
+  animation-name: reverse;
+  animation-duration: 350ms;
+  animation-fill-mode: forwards;
+  transition: all 350ms ease-in;
+  content: "";
+  width: 45px;
+  height: 44px;
+  border: 5px solid var(--yellow-border);
+  top: 4px;
+  left: 4px;
+  position: absolute;
+  border-radius: 82px;
+  margin-top: -2px;
+  background: var(--yellow-background);
+}
+
+.toggle--label:after {
+  transition-delay: 0ms;
+  transition: all 250ms ease-in;
+  position: absolute;
+  content: "";
+  box-shadow: var(--gray-dots) -13px 0 0 2px, var(--gray-dots) -24px 14px 0 -2px;
+  left: 105px;
+  top: 23px;
+  width: 10px;
+  height: 10px;
+  background: transparent;
+  border-radius: 50%;
+  opacity: 0;
+}
+.header__list {
+  display: flex;
+  list-style-type: none;
+  margin-left: -620px;
+  margin-top: 10px;
+}
+
+.header__item {
+  font-family: 'Orbitron';
+  margin-right: 36px;
+}
+
+.header__item:last-child {
+  margin-right: 0;
+}
+
+.header__link {
+  text-decoration: none;
+  color: black;
+  font-size: 22px;
+  margin-top: -30px;
+}
+/* .header__label {
+  position: absolute;
+  margin-top: 50px;
+  width: 60px;
+  height: 30px;
+  background-color: black;
+  display: inline-block;
+  padding: 4px 4px;
+  border-radius: 30px;
+  margin-left: 950px;
+} */
+
+.x {
+  background-color: #082032;
+  color: #fff;
+}
+
+.icon-btn {
+  /* font-family: 'Orbitron'; */
+  width: 120px;
+  margin-left: 400px;
+  height: 90px;
+  margin-top: 20px;
+  background-color: transparent;
+  border: none;
+}
+
+.farbutton{
+  background-color: transparent;
+  border: none;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+.fadbutton{
+  background-color: transparent;
+  border: none;
+}
+:root {
+  
+  --blue-background: #C2E9F6;
+  --blue-border: #72cce3;
+  --blue-color: #96dcee;
+  --yellow-background: #fffaa8;
+  --yellow-border: #f5eb71;
+  --indigo-background: #0F1826;
+  --indigo-border: #5d6baa;
+  --indigo-color: #6b7abb;
+  --gray-border: #e8e8ea;
+  --gray-dots: #e8e8ea;
+  --white: #fff;
+}
+
+
+.box-modal {
+  background: rgba(0, 0, 0, 0.3);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  display: none;
+}
+
+.modal-mini {
+  overflow: scroll;
+  width: 536px;
+  height: 100vh;
+  /* background-color:red; */
+  background-color: #FDFCE5;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  margin-left: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateX(536px);
+  transition: ease all 1s;
+  padding-left: 125px;
+  padding-top: 80px;
+}
+
+.modalcha {
+  transform: translateX(0);
+  z-index: 3;
+}
+
+.modal-active {
+  display: block;
+}
+
+.vector-btn {
+  /* font-family: 'Orbitron'; */
+  position: fixed;
+  right: 460px;
+  top: 30px;
+  background-color: transparent;
+  border: none;
+}
+
+
+.form {
+  /* font-family: 'Orbitron'; */
+  margin: 25px 0px 25px 0px;
+  display: flex;
+  justify-content: center;
+  background-color: #FDEFEF;
+  /* background-color: #E1E5EA; */
+  padding: 20px 15px;
+  border-radius: 7px;
+  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  width: 1160px;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+
+
+input {
+  text-align: center;
+  /* font-family: 'Orbitron'; */
+  width: 150px;
+  padding: 10px 15px;
+  background-color: #e9e1e6;
+  /* background-color: #FAF3F3; */
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+
+
+select {
+  text-align: center;
+  /* font-family: 'Orbitron'; */
+  width: 200px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  background-color: #e9e1e6;
+  padding: 10px 15px;
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+.button {
+  /* font-family: 'Orbitron'; */
+  width: 100px;
+  border-radius: 10px;
+  border: none;
+  background-color: #A7BBC7;
+  font-size: 20px;
+}
+
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.card {
+  width: 300px;
+  margin: 5px;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px 5px;
+  background-color: #FBF7F0;
+  /* background-color: #FCF0C8; */
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
+  margin-bottom: 25px;
+}
+
+.card:nth-child(4n) {
+  margin-right: 0;
+}
+
+
+p {
+  font-family: "Arial";
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #555555;
+  /* font-family: 'Orbitron'; */
+  text-align: center;
+}
+
+.more {
+  /* font-family: 'Orbitron'; */
+  width: 150px;
+  height: 35px;
+  border-radius: 8px;
+  padding: 10px 15px;
+  background-color: #CDC9C3;
+  border: none;
+  font-size: 16px;
+}
+.heartbtn{
+  margin-left: 60px;
+}
+
+.big_modal {
+  position: fixed;
+  top: 0;left: 0;right: 0;bottom: 0;
+  background-color: rgba(0, 0, 0, 0.493);
+  display: none;
+}
+
+.close_big_modal {
+  position: absolute;
+  right: 25%;
+  top: 60px;
+  background: transparent;
+  border:none;
+}
+
+.little_modal{
+  border-radius:8px;
+  padding: 10px;
+  width: 800px;
+  height: 500px;
+  background-color: rgb(142, 169, 221);
+  margin: 50px  auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal_img {
+  width: 200px;
+  height: 200px;
+}
+
+.modal_title{
+  font-size: 45px;
+  color: #CDC9C3;
+  text-align: center;
+}
+
+li {
+  list-style: none;
+}
+
+.fav_icon {
+  margin-left: 10px;
+  font-size: 20px;
+  color: green;
+}
+
+.red{
+  color: red;
+}
+
+
+.big_modal_show {
+  display: block;
+}
+
+
+
+@keyframes switch {
+  0% {
+    left: 1px;
+  }
+  
+  60% {
+    left: 4px;
+    width: 22px;
+  }
+  
+  100% {
+    left: 60px;
+    width: 45px;
+  }
+}
+
+@keyframes reverse {
+  0% {
+    left: 78px;
+    width: 32px;
+  }
+  
+  60% {
+    left: 72px;
+    width: 32px;
+  }
+  
+  100% {
+    left: 4px;
+  }
+}
+
+.like {
+  position: absolute;
+  font-size: 100px;
+  margin-left: 90px;
+  margin-left: -50px;
+}
+
+.like:active {
+  color: red;
+}
+
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  display: none;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-height: 100vh;
+  z-index: 3;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+
+.h_3 {
+  /* font-family: 'Orbitron'; */
+  background-color: white;
+  padding: 0;
+  margin: 0;
+  width: 100px;
+  text-align: center;
+  width: 337.1875px;
+  height: 49px;
+  font-size: 45px;
+  color: #0F1826;
+  border: 3px solid #0F1826;
+}
+
+.btn {
+  margin-left: 343.3px;
+  /* font-family: 'Orbitron'; */
+  position: absolute;
+  width: 60px;
+  height: 55px;
+  border: none;
+  background-color: #0F1826;
+  color: white;
+  font-size: 40px;
+}
+
+ .wrappersec{
+  display: flex;
+  flex-direction: column;
+} 
+
+ .cardsec{
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #FBF7F0;
+  width: 1160px;
+  margin-bottom: 25px;
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px 15px;
+  border-radius: 5px;
+} 
+ #big-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ .cardsec img{
+  width: 250px;
+  height: 200px;
+  max-width: 100%;
+  margin-right: 20px;
+} 
+ .titlesec{
+  margin-bottom: 130px;
+}
+.addressec{
+  position: absolute;
+  bottom: 15px;
+  left: 300px;
+}
+.nimadir{
+  margin-right: 50px;
+}
+.pricesec{
+  position: absolute;
+  right: 15px;
+  top: 20px;
+}
+.sec{
+  margin-top: 150px;
+}
+.heartbtnsec{
+  position: absolute;
+  right: 15px;
+  bottom: 20px;
+}
+
+.cardimg {
+  width: 250px;
+  height: 200px;
+}
+
+h3 {
+  font-family: "Arial";
+  font-size: 25px;
+  margin: 10px;
+  color: #CDC9C3;
+}
+.main__title{
+  font-size: 45px;
+  color: #CDC9C3;
+  /* font-family: 'Orbitron'; */
+  margin-top: 100px;
+  text-align: center;
+}
+
+
+.main__text{
+  color: #acaaa8;
+  font-size: 22px;
+}
+
+
+
+
+
+
+/* =======================================Umar yozgan kod start==================================== */
+
+
+/* .wrapper {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  
+} */
+
+/* .card {
+  width: 200px;
+  margin: 5px;
+  text-align: center;
+  border: 1px solid black;
+  padding: 10px;
+} */
+
+/* .card img {
+  width: 100%;
+  height: 150px;
+} */
+
+
+
+
+
+
+
+
+
+/* =======================================Umar yozgan kod end==================================== */
+.headersalom{
+  font-size: 45px;
+  color: #CDC9C3;
+  /* font-family: 'Orbitron'; */
+  margin-top: 100px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+h3{
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 30px;
+  color: #A0937D;
+}
+.info{
+  color: #3A6351;
+  width: 604px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+.links{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+span{
+  color: #444444;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+a{
+  color: #5F939A;
+  font-size: 25px;
+}
+.projectlist{
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.project-item{
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F2EDD7;
+  width: 400px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  margin-right: 20px;
+  height: 250px;
+}
+.project-item:hover{
+  box-shadow: 0px 12px 21px rgba(0, 0, 0, 0.1);
+}
+.projectimg{
+  border-radius: 5px 5px 0 0;
+  margin-bottom: 15px;
+  width: 350px;
+  height: 180px;
+}
+.end{
+  font-size: 45px;
+  color: #CDC9C3;
+  /* font-family: 'Orbitron'; */
+  margin-top: 100px;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #B61919;
+}
